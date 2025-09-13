@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - EJC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Minimercado EJC</h1>
+            <p>Faça um novo pedido</p>
+        </header>
+        <main>
+            <section>
+                <h2>1. Para quem é o pedido?</h2>
+                <input type="text" id="vivenciando-nome" placeholder="Nome de quem está pedindo" required>
+            </section>
+            <section>
+                <h2>2. Escolha os Produtos</h2>
+                <div id="product-list" class="product-grid"><p>Carregando produtos...</p></div>
+            </section>
+            <section>
+                <h2>3. Resumo do Pedido</h2>
+                <ul id="cart-items"></ul>
+                <button id="submit-order" class="btn-primary">Finalizar Pedido</button>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

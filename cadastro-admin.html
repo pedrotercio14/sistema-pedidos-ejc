@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Admin - EJC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 400px;">
+        <header>
+            <h1>Cadastro de Novo Admin</h1>
+            <p>Apenas para pessoal autorizado.</p>
+        </header>
+        <main>
+            <form id="signup-form">
+                <input type="email" id="email" placeholder="Novo e-mail de admin" required>
+                <input type="password" id="password" placeholder="Crie uma senha forte" required>
+                <input type="password" id="invite-code" placeholder="Código de Convite" required>
+                <button type="submit" class="btn-primary">Criar Conta</button>
+            </form>
+            <p id="message" style="text-align: center;"></p>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="/login.html">Já tenho uma conta</a>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="cadastro-admin.js"></script>
+</body>
+</html>

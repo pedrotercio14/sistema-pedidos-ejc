@@ -1,0 +1,187 @@
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #28a745;
+    --background-color: #f0f2f5; /* Cor de fundo mais suave */
+    --text-color: #333;
+    --container-bg: #fff;
+    --border-color: #ddd;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: var(--container-bg);
+    padding: 25px;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra para profundidade */
+}
+header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+h1, h2 {
+    color: #4a4a4a;
+}
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+button {
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    border: none;
+    color: white;
+}
+button:active { transform: scale(0.98); }
+.btn-primary { background-color: var(--primary-color); }
+.btn-primary:hover { background-color: #004494; }
+
+/* --- MELHORIAS VISUAIS NOS CARDS E BOTÕES --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+.product-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out;
+}
+.product-card:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+}
+.product-card h3 { margin-top: 0; }
+.product-card p { font-weight: bold; color: var(--primary-color); }
+.product-card button {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+.product-card button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* --- MELHORIAS VISUAIS NO CARRINHO --- */
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+#cart-items li {
+    padding: 10px 5px;
+    border-bottom: 1px dashed #ccc;
+}
+
+/* Estilos das outras páginas (cozinha, admin, etc) */
+.order-card {
+    background: #fffbef;
+    border-left: 5px solid #ffeeba;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Adicione ou substitua estas regras no seu arquivo style.css */
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Garante alinhamento vertical */
+    padding: 12px 0; /* Ajuste o padding vertical */
+    border-bottom: 1px solid #eee;
+}
+
+#cart-items .item-info {
+    flex-grow: 1;
+    font-weight: bold; /* Deixa o nome do item mais evidente */
+    color: var(--text-color);
+}
+
+#cart-items .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduz um pouco o espaço entre os botões e o número */
+    margin: 0 10px; /* Reduz a margem lateral */
+}
+
+#cart-items .quantity-controls button {
+    width: 32px; /* Ligeiramente maior */
+    height: 32px; /* Ligeiramente maior */
+    padding: 0;
+    line-height: 30px; /* Alinha o texto no centro */
+    text-align: center;
+    font-size: 20px; /* Ícones maiores */
+    border-radius: 50%;
+    border: 1px solid var(--primary-color); /* Borda na cor principal */
+    background-color: var(--primary-color); /* Fundo na cor principal */
+    color: white; /* Texto branco */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#cart-items .quantity-controls button:hover {
+    background-color: #004494; /* Tom mais escuro no hover */
+    transform: scale(1.05);
+}
+
+#cart-items .quantity-controls span {
+    margin: 0 8px; /* Espaço entre o botão e o número */
+    font-weight: bold;
+    min-width: 25px; /* Garante que o número não "pule" */
+    text-align: center;
+    font-size: 1.1em; /* Deixa o número maior */
+    color: var(--text-color);
+}
+
+#cart-items strong {
+    min-width: 70px; /* Garante espaço para o preço */
+    text-align: right;
+    font-size: 1.1em;
+}
+
+#cart-items .btn-remove-item {
+    width: 35px; /* Ligeiramente maior */
+    height: 35px; /* Ligeiramente maior */
+    padding: 0;
+    line-height: 35px;
+    background-color: #dc3545; /* Vermelho */
+    border: none;
+    border-radius: 50%;
+    font-size: 18px; /* Ícone de "x" maior */
+    color: white;
+    cursor: pointer;
+    margin-left: 15px; /* Espaçamento da direita */
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#cart-items .btn-remove-item:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+    transform: scale(1.05);
+}
