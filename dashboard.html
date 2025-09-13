@@ -1,48 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard de Vendas - EJC</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; }
-        .stat-card h2 { margin-top: 0; }
-        .stat-card ol, .stat-card ul { padding-left: 20px; }
-        .stat-card .value { font-size: 2.5em; font-weight: bold; color: var(--primary-color); }
-        #export-btn { margin-top: 20px; background-color: var(--secondary-color); }
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .stat-card {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #dee2e6;
+      }
+      .stat-card h2 {
+        margin-top: 0;
+      }
+      .stat-card ol,
+      .stat-card ul {
+        padding-left: 20px;
+      }
+      .stat-card .value {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+      #export-btn {
+        margin-top: 20px;
+        background-color: var(--secondary-color);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Dashboard de Vendas</h1>
-            <p>Análise dos pedidos concluídos do evento.</p>
-            <a href="/admin.html" style="margin-top: 15px; display: inline-block;">← Voltar para Gestão de Produtos</a>
-        </header>
-        <main>
-            <div class="dashboard-grid">
-                <div class="stat-card">
-                    <h2>Valor Total Arrecadado</h2>
-                    <p id="total-arrecadado" class="value">R$ 0,00</p>
-                </div>
-                <div class="stat-card">
-                    <h2>Produtos Mais Vendidos</h2>
-                    <ol id="produtos-mais-vendidos">
-                        <li>Carregando...</li>
-                    </ol>
-                </div>
-                <div class="stat-card">
-                    <h2>Horários de Pico (Pedidos por Hora)</h2>
-                    <ul id="horarios-pico">
-                        <li>Carregando...</li>
-                    </ul>
-                </div>
-            </div>
-            <button id="export-btn" class="btn-primary">Exportar Relatório Completo (CSV)</button>
-        </main>
+      <header>
+        <h1>Dashboard de Vendas</h1>
+        <p>Análise dos pedidos concluídos do evento.</p>
+        <a href="/admin.html" style="margin-top: 15px; display: inline-block"
+          >← Voltar para Gestão de Produtos</a
+        >
+      </header>
+      <main>
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <h2>Valor Total Arrecadado</h2>
+            <p id="total-arrecadado" class="value">R$ 0,00</p>
+          </div>
+          <div class="stat-card">
+            <h2>Produtos Mais Vendidos</h2>
+            <ol id="produtos-mais-vendidos">
+              <li>Carregando...</li>
+            </ol>
+          </div>
+          <div class="stat-card">
+            <h2>Horários de Pico (Pedidos por Hora)</h2>
+            <ul id="horarios-pico">
+              <li>Carregando...</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="dashboard-grid"
+          style="grid-template-columns: 1fr 1fr; margin-top: 20px"
+        >
+          <button
+            id="export-summary-btn"
+            class="btn-primary"
+            style="background-color: #17a2b8"
+          >
+            Baixar Resumo por Dia (CSV)
+          </button>
+          <button
+            id="export-detail-btn"
+            class="btn-primary"
+            style="background-color: var(--secondary-color)"
+          >
+            Baixar Relatório Detalhado (CSV)
+          </button>
+        </div>
+      </main>
     </div>
     <script type="module" src="./dashboard.js"></script>
-</body>
+  </body>
 </html>
